@@ -1,5 +1,5 @@
 <?php
-$host = "localhost";
+$host = "localhost:3307";
 $user = "root";
 $pass = "";
 $db = "latihan1";
@@ -9,5 +9,5 @@ if ($conn == false)
 {
     echo "Koneksi ke server gagal.";
     die();
-} #else echo "Koneksi berhasil";
+} else echo "Koneksi berhasil";
 ?>

@@ -17,7 +17,7 @@ Jika MySQL dan Webserver Apachenya sudah running, selanjutnya bukalah web browse
 
 Kalian bisa langsung saja membuat database pada PHPMyAdmin dengan mengklik tombol MySQL yang ada diatas kemudian masukan kode dibawah kemudian klik kirim.
 
-```
+```mysql
 CREATE DATABASE Latihan1;
 ```
 
@@ -30,7 +30,7 @@ CREATE DATABASE Latihan1;
 
 Setelah database berhasil dibuat. Selanjutnya proses pembuatan tabel pada database tersebut. Pembuatannya sama dengan sebelumnya, kalian hanya perlu menekan tombol MySQL pada Database sebelumnya kemudian masukan kode berikut:
 
-```
+```mysql
 CREATE TABLE data_barang (
         id_barang int(10) auto_increment Primary Key,
         kategori varchar(30),
@@ -48,7 +48,7 @@ CREATE TABLE data_barang (
 
 Untuk dapat menambahkan data pada tabel yang sudah dibuat sebelumnya, kalian hanya perlu memasukan kode berikut pada bagian MySQLnya:
 
-```
+```mysql
 INSERT INTO data_barang (kategori, nama, gambar, harga_beli, harga_jual, stok)
 VALUES ('Elektronik', 'HP Samsung Android', 'hp_samsung.jpg', 2000000, 2400000, 5),
 ('Elektronik', 'HP Xiaomi Android', 'hp_xiaomi.jpg', 1000000, 1400000, 5),
@@ -68,11 +68,32 @@ Kemudian untuk dapat mengaksesnya pada web server, gunakanlah URL : http://local
 
 Buatlah file baru dalam Directory Lab_php_dasar dengan nama file koneksi.php kemuadian masukan kode berikut:
 
+```php
+<?php
+$host = "localhost:3307";
+$user = "root";
+$pass = "";
+$db = "latihan1";
+
+$conn = mysqli_connect($host, $user, $pass, $db);
+if ($conn == false)
+{
+    echo "Koneksi ke server gagal.";
+    die();
+} else echo "Koneksi berhasil";
+?>
+```
+
+ dan untuk mengaksesnya dapat menggunakan URL : http://localhost:8080/Lab8Web/Lab8_php_database/koneksi.php jika koneksi berhasil maka anda akan mendapatkan hasil seperti gambar dibawah ini.
+
+![menambahkan_gambar](img/CEK%20KONEKSI%20.png)
 
 
- dan untuk mengaksesnya dapat menggunakan URL : http://localhost:8080/Lab7Web/Lab7_php_dasar/Lat1.php?nama=%20Diyanarum
 
-![menambahkan_gambar](img/PREDEFINE.png)
+
+
+
+
 
 Berikut kode yang digunakan:
 

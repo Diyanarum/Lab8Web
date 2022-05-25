@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(159, 133, 133);
+    background-color: whitesmoke;
     font-family: 'Courier New', Courier, monospace;
 }
 table{
@@ -7,8 +7,8 @@ table{
     margin-top: 15px;
 }
 th{
-    background-color: rgb(166, 84, 100);
+    background-color: aqua;
 }
 th,td{
-    border: 2px solid rgb(0, 0, 0);
+    border: 1px solid black;
 }

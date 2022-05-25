@@ -89,11 +89,94 @@ if ($conn == false)
 ![menambahkan_gambar](img/CEK%20KONEKSI%20.png)
 
 
+## MENAMPILKAN DATA DENGAN FILE INDEX (READ)
 
+![menambahkan_gambar](img/INDEX.png)
 
+Untuk menampilkan data seperti gambar diatas kalian perlu menggunakan kode dibawah ini:
 
+```php
+<?php
+include("koneksi.php");
 
+// query untuk menampilkan data
+$sql = 'SELECT * FROM data_barang';
+$result = mysqli_query($conn, $sql);
+?>
+```
 
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Data Barang</title>
+</head>
+<body>
+    <div class="container">
+        <h1>DATA BARANG</h1>
+        <div class="main">
+            <a href="tambah.php">Tambah Barang</a>
+            <table>
+            <tr>
+                <th>Gambar</th>
+                <th>Nama Barang</th>
+                <th>Katagori</th>
+                <th>Harga Jual</th>
+                <th>Harga Beli</th>
+                <th>Stok</th>
+                <th>Aksi</th>
+            </tr>
+            <?php if($result): ?>
+            <?php while($row = mysqli_fetch_array($result)): ?>
+            <tr>
+                <td><img src="gambar/<?= $row['gambar'];?>" alt="<?=
+$row['nama'];?>"></td>
+                <td><?= $row['nama'];?></td>
+                <td><?= $row['kategori'];?></td>
+                <td><?= $row['harga_beli'];?></td>
+                <td><?= $row['harga_jual'];?></td>
+                <td><?= $row['stok'];?></td>
+                <td>
+                <a href="ubah.php?id=<?= $row['id_barang'];?>">Ubah</a>
+                <a href="hapus.php?id=<?= $row['id_barang'];?>">Hapus</a> 
+                </td>
+            </tr>
+            <?php endwhile; else: ?>
+            <tr>
+                <td colspan="7">Belum ada data</td>
+            </tr>
+            <?php endif; ?>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+Dan agar tampilan lebih menarik dan berwarna kalian dapat menambahkan kode css berikut ini:
+
+```css
+body{
+    background-color: rgb(159, 133, 133);
+    font-family: 'Courier New', Courier, monospace;
+}
+table{
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+th{
+    background-color: rgb(166, 84, 100);
+}
+th,td{
+    border: 2px solid rgb(0, 0, 0);
+}
+```
+
+## MENAMBAHKAN DATA (CREATE)
+
+![menambahkan_gambar](img/INDEX.png)
 
 
 

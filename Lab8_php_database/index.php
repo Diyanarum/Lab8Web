@@ -5,7 +5,6 @@ include("koneksi.php");
 $sql = 'SELECT * FROM data_barang';
 $result = mysqli_query($conn, $sql);
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

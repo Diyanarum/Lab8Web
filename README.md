@@ -89,11 +89,11 @@ if ($conn == false)
 ![menambahkan_gambar](img/CEK%20KONEKSI%20.png)
 
 
-## MENAMPILKAN DATA DENGAN FILE INDEX (READ)
+## MENAMBAHKAN DATA (CREATE)
 
 ![menambahkan_gambar](img/INDEX.png)
 
-Untuk menampilkan data seperti gambar diatas kalian perlu menggunakan kode dibawah ini:
+Untuk menambahkan data seperti gambar diatas kalian perlu menggunakan kode dibawah ini:
 
 ```php
 <?php
@@ -104,8 +104,7 @@ $sql = 'SELECT * FROM data_barang';
 $result = mysqli_query($conn, $sql);
 ?>
 ```
-
-```php
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,7 +154,7 @@ $row['nama'];?>"></td>
 </html>
 ```
 
-Dan agar tampilan lebih menarik dan berwarna kalian dapat menambahkan kode css berikut ini:
+Dan agar tampilan lebih menarik dan berwarna kalian dapat menambahkan kode css berikut:
 
 ```css
 body{
@@ -174,9 +173,7 @@ th,td{
 }
 ```
 
-## MENAMBAHKAN DATA (CREATE)
 
-![menambahkan_gambar](img/INDEX.png)
 
 
 

@@ -89,7 +89,7 @@ if ($conn == false)
 ![menambahkan_gambar](img/CEK%20KONEKSI%20.png)
 
 
-## MENAMBAHKAN DATA (CREATE)
+## MENAMPILKAN DATA DENGAN FILE INDEX (READ)
 
 ![menambahkan_gambar](img/INDEX.png)
 

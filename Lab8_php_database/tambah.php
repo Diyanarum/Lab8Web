@@ -64,7 +64,7 @@ enctype="multipart/form-data">
         </div>
         <div class="input">
             <label>Stock</label>
-            <input type="text" name="stok" />
+            <input type="text" name="stock" />
         </div>
         <div class="input">
             <label>File Gambar</label>

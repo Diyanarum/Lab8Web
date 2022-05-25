@@ -9,7 +9,7 @@ if (isset($_POST['submit']))
     $kategori = $_POST['kategori'];
     $harga_jual = $_POST['harga_jual'];
     $harga_beli = $_POST['harga_beli'];
-    $stok = $_POST['stok'];
+    $stock = $_POST['stock'];
     $file_gambar = $_FILES['file_gambar'];
     $gambar = null;
 
@@ -25,8 +25,8 @@ if (isset($_POST['submit']))
     
     $sql = 'UPDATE data_barang SET ';
     $sql .= "nama = '{$nama}', kategori = '{$kategori}', ";
-    $sql .= "harga_jual = '{$harga_jual}', harga_beli = '{$harga_beli}', stok
-= '{$stok}' ";
+    $sql .= "harga_jual = '{$harga_jual}', harga_beli = '{$harga_beli}', stock
+= '{$stock}' ";
     if (!empty($gambar))
         $sql .= ", gambar = '{$gambar}' ";
     $sql .= "WHERE id_barang = '{$id}'";
@@ -47,7 +47,6 @@ function is_select($var, $val) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +56,7 @@ function is_select($var, $val) {
 </head>
 <body>
 <div class="container">
-    <h1>UBAH BARANG</h1>
+    <h1>Ubah Barang</h1>
     <div class="main">
         <form method="post" action="ubah.php"
 enctype="multipart/form-data">
@@ -88,9 +87,9 @@ $data['harga_jual'];?>" />
 $data['harga_beli'];?>" />
             </div>
             <div class="input">
-                <label>Stok</label>
-                <input type="text" name="stok" value="<?php echo
-$data['stok'];?>" />
+                <label>Stock</label>
+                <input type="text" name="stock" value="<?php echo
+$data['stock'];?>" />
             </div>
             <div class="input">
                 <label>File Gambar</label>

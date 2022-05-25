@@ -12,3 +12,11 @@ th{
 th,td{
     border: 1px solid rgb(0, 0, 0);
 }
+
+.input{
+    padding: 5px;
+}
+.input label{
+    display: inline-block;
+    width: 100px;
+}

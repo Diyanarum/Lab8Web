@@ -5,6 +5,7 @@ include("koneksi.php");
 $sql = 'SELECT * FROM data_barang';
 $result = mysqli_query($conn, $sql);
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +16,9 @@ $result = mysqli_query($conn, $sql);
 </head>
 <body>
     <div class="container">
-        <h1>Data Barang</h1>
+        <h1>DATA BARANG</h1>
         <div class="main">
+            <a href="tambah.php">Tambah Barang</a>
             <table>
             <tr>
                 <th>Gambar</th>
@@ -37,7 +39,10 @@ $row['nama'];?>"></td>
                 <td><?= $row['harga_beli'];?></td>
                 <td><?= $row['harga_jual'];?></td>
                 <td><?= $row['stok'];?></td>
-                <td><?= $row['id_barang'];?></td>
+                <td>
+                <a href="ubah.php?id=<?= $row['id_barang'];?>">Ubah</a>
+                <a href="hapus.php?id=<?= $row['id_barang'];?>">Hapus</a> 
+                </td>
             </tr>
             <?php endwhile; else: ?>
             <tr>

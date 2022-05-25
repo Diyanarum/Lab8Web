@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(159, 133, 133);
+    font-family: 'Courier New', Courier, monospace;
+}
+table{
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+th{
+    background-color: rgb(166, 84, 100);
+}
+th,td{
+    border: 2px solid rgb(0, 0, 0);
+}

@@ -9,7 +9,7 @@ if (isset($_POST['submit']))
     $kategori = $_POST['kategori'];
     $harga_jual = $_POST['harga_jual'];
     $harga_beli = $_POST['harga_beli'];
-    $stock = $_POST['stock'];
+    $stok = $_POST['stok'];
     $file_gambar = $_FILES['file_gambar'];
     $gambar = null;
 
@@ -25,8 +25,8 @@ if (isset($_POST['submit']))
     
     $sql = 'UPDATE data_barang SET ';
     $sql .= "nama = '{$nama}', kategori = '{$kategori}', ";
-    $sql .= "harga_jual = '{$harga_jual}', harga_beli = '{$harga_beli}', stock
-= '{$stock}' ";
+    $sql .= "harga_jual = '{$harga_jual}', harga_beli = '{$harga_beli}', stok
+= '{$stok}' ";
     if (!empty($gambar))
         $sql .= ", gambar = '{$gambar}' ";
     $sql .= "WHERE id_barang = '{$id}'";
@@ -34,11 +34,11 @@ if (isset($_POST['submit']))
 
     header('location: index.php');
 }
-//$id = $_GET['id'];
-$id = (isset($_POST['id']) ? $_POST['id'] : '');
+$id = $_GET['id'];
+//$id = (isset($_POST['id']) ? $_POST['id'] : '');
 $sql = "SELECT * FROM data_barang WHERE id_barang = '{$id}'";
 $result = mysqli_query($conn, $sql);
-if (!$result) die('Error: Data tidak tersedia');
+//if (!$result) die('Error: Data tidak tersedia');
 $data = mysqli_fetch_array($result);
 
 function is_select($var, $val) {
@@ -87,9 +87,9 @@ $data['harga_jual'];?>" />
 $data['harga_beli'];?>" />
             </div>
             <div class="input">
-                <label>Stock</label>
-                <input type="text" name="stock" value="<?php echo
-$data['stock'];?>" />
+                <label>Stok</label>
+                <input type="text" name="stok" value="<?php echo
+$data['stok'];?>" />
             </div>
             <div class="input">
                 <label>File Gambar</label>
